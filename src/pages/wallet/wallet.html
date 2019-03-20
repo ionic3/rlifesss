@@ -1,0 +1,125 @@
+<ion-header>
+  <ion-navbar>
+   
+    <ion-title float-left>RICHLIFE</ion-title>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="page-dashboard">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+     
+  <ion-card class="card-three">
+    <ion-row>
+      <ion-col class="line_one">
+        <ion-icon name="folder"></ion-icon>
+        <h3>Ví hoa hồng</h3>
+      </ion-col>
+    </ion-row>
+    <ion-card-content>
+      <ion-grid class="panel-three">
+        <ion-row>
+          <ion-col>
+            <h1 text-center><span><b>{{Formatnumber(infomation.balance_wallet)}}</b></span> RL</h1>
+            <h4 text-center>{{Formatnumber(infomation.balance_wallet * infomation.price_rl)}} <sup>đ</sup></h4>
+            <p>Hoa hồng trực hệ: <b>{{Formatnumber(infomation.th_wallet)}}</b> RL</p>
+            <p>Thưởng danh hiệu: <b>{{Formatnumber(infomation.dh_wallet)}}</b> RL</p>
+            <p>Hoa hồng nhóm: <b>{{Formatnumber(infomation.n_wallet)}}</b> RL</p>
+            <p>Hoa hồng cộng hưởng: <b>{{Formatnumber(infomation.ch_wallet)}}</b> RL</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col text-center>
+            <p style="margin: 0 auto;">
+            <span class="btn-ycr" (click)="ViewWithdraw()">Yêu cầu rút</span>
+            
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <div >
+    <ion-segment [(ngModel)]="historys">
+      <ion-segment-button value="truche">
+        Trực hệ
+      </ion-segment-button>
+      <ion-segment-button value="nhom">
+        Nhóm
+      </ion-segment-button>
+      <ion-segment-button value="conghuong">
+        + Hưởng
+      </ion-segment-button>
+      <ion-segment-button value="thuong">
+        Thưởng
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="historys">
+    <ion-list *ngSwitchCase="'truche'">
+      <p style="color: #FF5722; font-size: 16px; padding: 0; background: #FFF; text-align: center !important; width: 100%; margin: 0px; margin-top: 5px;" text-center>Tổng số: <b>{{count_commision_truche}}</b></p>
+      <ion-item *ngFor="let item of history_commision_truche"  style="border-bottom: 1px solid #eee;" class="history" >
+        <ion-row >
+            <ion-col col-8 text-left>
+              <p class="detail">{{item.detail}}</p>
+              <p class="date_added">{{item.date_added}}</p>
+            </ion-col>
+            <ion-col col-4 text-center>
+              <p class="amount"> + {{Formatnumber(item.amount)}} RL</p>
+            </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'nhom'">
+      <p style="color: #FF5722; font-size: 16px; padding: 0; background: #FFF; text-align: center !important; width: 100%; margin: 0px; margin-top: 5px;" text-center>Tổng số: <b>{{count_commision_nhom}}</b></p>
+      <ion-item *ngFor="let item of history_commision_nhom"  style="border-bottom: 1px solid #eee;" class="history" >
+        <ion-row >
+            <ion-col col-8 text-left>
+              <p class="detail">{{item.detail}}</p>
+              <p class="date_added">{{item.date_added}}</p>
+            </ion-col>
+            <ion-col col-4 text-center>
+              <p class="amount"> + {{Formatnumber(item.amount)}} RL</p>
+            </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'conghuong'">
+      <p style="color: #FF5722; font-size: 16px; padding: 0; background: #FFF; text-align: center !important; width: 100%; margin: 0px; margin-top: 5px;" text-center>Tổng số: <b>{{count_commision_conghuong}}</b></p>
+      <ion-item *ngFor="let item of history_commision_conghuong"  style="border-bottom: 1px solid #eee;" class="history" >
+        <ion-row >
+            <ion-col col-8 text-left>
+              <p class="detail">{{item.detail}}</p>
+              <p class="date_added">{{item.date_added}}</p>
+            </ion-col>
+            <ion-col col-4 text-center>
+              <p class="amount"> + {{Formatnumber(item.amount)}} RL</p>
+            </ion-col>
+        </ion-row>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'thuong'">
+      <p style="color: #FF5722; font-size: 16px; padding: 0; background: #FFF; text-align: center !important; width: 100%; margin: 0px; margin-top: 5px;" text-center>Tổng số: <b>{{count_commision_thuong}}</b></p>
+      <ion-item *ngFor="let item of history_commision_thuong"  style="border-bottom: 1px solid #eee;" class="history" >
+        <ion-row >
+            <ion-col col-8 text-left>
+              <p class="detail">{{item.detail}}</p>
+              <p class="date_added">{{item.date_added}}</p>
+            </ion-col>
+            <ion-col col-4 text-center>
+              <p class="amount"> + {{Formatnumber(item.amount)}} RL</p>
+            </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

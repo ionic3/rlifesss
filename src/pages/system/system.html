@@ -1,0 +1,200 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title float-left>Hệ thống thành viên</ion-title>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="page-dashboard">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+     
+    <ion-row class="tabss" >
+      <ion-col text-center [ngClass]="{'active': tabs === 'nkd'}" (click)="ChangeTab('nkd')">
+        NHÓM KINH DOANH
+      </ion-col>
+      <ion-col text-center [ngClass]="{'active': tabs === 'dsbt'}" (click)="ChangeTab('dsbt')">
+        DS BẢO TRỢ
+      </ion-col>
+    </ion-row>
+    <div style="margin-top: 50px;"></div>
+    <div *ngIf="tabs == 'nkd'">
+    <ion-row style="position: absolute; left: 10px; z-index: 9999999; top: 50px; font-size: 16px; color: #5f5b5b;">
+      <ion-col text-left>
+        
+        <p>L: <b>{{member['count_binary_left']}}</b></p>
+        <p>R: <b>{{member['count_binary_right']}}</b></p>
+      </ion-col>
+    </ion-row>
+    <ion-row style="position: absolute; right: 10px; z-index: 9999999">
+      <ion-col text-right>
+        
+        <span class="btn-top" (click)="ClickTop()"><ion-icon name="arrow-round-up"></ion-icon></span>
+        <span class="btn-back" (click)="ClickBack()"><ion-icon name="arrow-dropup"></ion-icon></span>
+      </ion-col>
+    </ion-row>
+    <ion-row >
+      <ion-col col-12 text-center >
+        <img class="img_line1" src="assets/imgs/user.png" height=""/>
+        <p>{{member['fullname0']}}</p>
+        <p>{{member['email0']}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row >
+      <ion-col col-3>
+
+      </ion-col>
+      <ion-col col-3 style="" class="border-left-top">
+
+      </ion-col>
+      <ion-col col-3  style="" class="border-right-top">
+
+      </ion-col>
+      <ion-col col-3>
+
+      </ion-col>
+    </ion-row>
+    <ion-row >
+      <ion-col col-6 text-center >
+        <div *ngIf="member['empty1'] == false" (click)="LoadTree(member['customer_id1'])">
+          <img class="img_line2" src="assets/imgs/user.png" height=""/>
+          <p>{{member['fullname1']}}</p>
+          <p>{{member['email1']}}</p>
+        </div>
+        <div *ngIf="member['empty1'] == true">
+          <ion-icon class="icon_add_user line2" (click)="AddMember(member['customer_id0'],'left')" name="add"></ion-icon>
+        </div>
+      </ion-col>
+      
+      <ion-col col-6  text-center >
+        <div *ngIf="member['empty2'] == false" (click)="LoadTree(member['customer_id2'])">
+          <img class="img_line2" src="assets/imgs/user.png" height=""/>
+          <p>{{member['fullname2']}}</p>
+          <p>{{member['email2']}}</p>
+        </div>
+        <div *ngIf="member['empty2'] == true">
+          <ion-icon class="icon_add_user line2" (click)="AddMember(member['customer_id0'],'right')" name="add"></ion-icon>
+        </div>
+      </ion-col>
+     
+    </ion-row>
+    <ion-row >
+      <div style="width: 12.5%; float: left;">
+
+      </div>
+
+      <div style="width: 12.5%;float: left;" class="padding-0">
+        <div class="border-left-top" *ngIf="member['empty1'] == false">
+        </div>
+        
+      </div>
+      <div style="width: 12.5%;float: left;" class="padding-0">
+        <div class="border-right-top" *ngIf="member['empty1'] == false">
+        </div>
+        
+      </div>
+      
+      <div style="width: 12.5%;float: left;">
+
+      </div>
+      <div style="width: 12.5%;float: left;">
+
+      </div>
+      <div style="width: 12.5%;float: left;" class="padding-0">
+        <div class="border-left-top" *ngIf="member['empty2'] == false">
+        </div>
+        
+      </div>
+      <div style="width: 12.5%;float: left;" class="padding-0">
+        <div  class="border-right-top" *ngIf="member['empty2'] == false">
+        </div>
+      </div>
+      
+     
+      <div style="width: 12.5%;float: left;">
+
+      </div>
+
+      
+    </ion-row>
+    <ion-row *ngIf="member['empty1'] == false || member['empty2'] == false">
+      <ion-col col-3 text-center >
+        <div *ngIf="member['empty1'] == false">
+          <div *ngIf="member['empty3'] == false" (click)="LoadTree(member['customer_id3'])">
+            <img class="img_line3" src="assets/imgs/user.png" height=""/>
+            <p>{{member['fullname3']}}</p>
+            <p>{{member['email3']}}</p>
+          </div>
+          <div *ngIf="member['empty3'] == true">
+            <ion-icon class="icon_add_user line3" (click)="AddMember(member['customer_id1'],'left')" name="add"></ion-icon>
+          </div>
+        </div>
+      </ion-col>
+      
+      <ion-col col-3 text-center >
+        <div *ngIf="member['empty1'] == false">
+          <div *ngIf="member['empty4'] == false" (click)="LoadTree(member['customer_id4'])">
+            <img class="img_line3" src="assets/imgs/user.png" height=""/>
+            <p>{{member['fullname4']}}</p>
+            <p>{{member['email4']}}</p>
+          </div>
+          <div *ngIf="member['empty4'] == true">
+            <ion-icon class="icon_add_user line3" (click)="AddMember(member['customer_id1'],'right')" name="add"></ion-icon>
+          </div>
+        </div>
+      </ion-col>
+      
+      <ion-col col-3 text-center >
+        <div *ngIf="member['empty2'] == false">
+          <div *ngIf="member['empty5'] == false" (click)="LoadTree(member['customer_id5'])">
+            <img class="img_line3" src="assets/imgs/user.png" height=""/>
+            <p>{{member['fullname5']}}</p>
+            <p>{{member['email5']}}</p>
+          </div>
+          <div *ngIf="member['empty5'] == true">
+            <ion-icon class="icon_add_user line3" (click)="AddMember(member['customer_id2'],'left')" name="add"></ion-icon>
+          </div>
+        </div>
+      </ion-col>
+      
+      <ion-col col-3 text-center>
+        <div *ngIf="member['empty2'] == false">
+          <div  *ngIf="member['empty6'] == false" (click)="LoadTree(member['customer_id6'])">
+            <img class="img_line3" src="assets/imgs/user.png" height=""/>
+            <p>{{member['fullname6']}}</p>
+            <p>{{member['email6']}}</p>
+          </div>
+          <div *ngIf="member['empty6'] == true">
+            <ion-icon class="icon_add_user line3" (click)="AddMember(member['customer_id2'],'right')" name="add"></ion-icon>
+          </div>
+        </div>
+      </ion-col>
+      
+    </ion-row>
+    </div>
+
+    <div *ngIf="tabs == 'dsbt'" class="dsbt">
+        <p style="color: #FF5722;     margin-top: -10px; font-size: 16px; padding: 0; background: #FFF; position: fixed; z-index: 9999; text-align: center !important; width: 100%; height: 30px; line-height: 30px;" text-center>Tổng số: <b>{{count_history}}</b></p>
+          <ion-card-content style="padding: 5px; margin-top: 15px; float: left;">
+            <ion-list>
+            <ion-item *ngFor="let item of history" style="border-bottom: 1px solid #eee;" [ngClass]="{'none-active- email': item.active_email === 0}">
+              <ion-avatar item-start>
+                <img src="assets/imgs/Profile.png">
+              </ion-avatar>
+              <p class="fullname">Tên đầy đủ: <b>{{item.fullname}}</b></p>
+              <p>Email: <b>{{item.email}}</b> - DSCN: {{item.dscn}}</p>
+              <p>Ngày tham gia: <b>{{item.date_added}}</b></p>
+              <h2></h2>
+             
+            </ion-item>
+          </ion-list>
+
+          
+          <p text-center  *ngIf="count_history == 0">No data</p>
+        </ion-card-content>
+       
+      
+    </div>
+</ion-content>
+<ion-icon class="icon_add" name="add"></ion-icon>

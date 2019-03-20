@@ -1,0 +1,48 @@
+page-personal-sales {
+	
+	
+	
+	.card-md, .card-ios{
+		border-radius: 25px;
+	}
+	
+	ion-card {
+	    padding: 10px 0;
+	}
+	.card-tow p{
+		font-weight: 400;
+	}
+	.card-tow p span{
+		text-transform: uppercase;
+		color: #64471b;
+		font-weight: bold;
+	}
+	.card-tow ion-icon{
+	    color: #fff;
+	    background: #8BC34A;
+	    padding: 24px;
+	    font-size: 50px;
+	    width: 95px;
+	    height: 95px;
+	    margin: 0 auto;
+	    text-align: center;
+	    border-radius: 50%;
+	    margin-top: 50px;
+	}
+	
+	ion-segment{
+		background: #795548;
+	}
+	.segment-button.activated,.segment-button.segment-activated{
+	    border-bottom: 3px solid #FFF !important;
+		color: #E91E63 !important;
+	}
+	.segment-button{
+		color: #fff !important;
+		font-weight: bold !important;
+		opacity: 1 !important;
+	}
+	.item-md,.item-ios{
+		background-color: #d6d6d6;
+	}
+}

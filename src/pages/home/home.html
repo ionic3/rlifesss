@@ -1,0 +1,113 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title float-left>RICHLIFE</ion-title>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="page-dashboard">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+     
+    <ion-card>
+      <ion-row class="title-header">
+       <p style="text-align: center;margin: 0 auto">
+          <ion-icon name="calendar"></ion-icon> <span>Doanh số các nhóm kinh doanh</span>
+        </p>      
+      </ion-row>
+   
+      <div class="border-line"></div>
+      <ion-card-content>
+      <ion-grid class="panel-one">
+        <ion-row>
+          <ion-col text-center>
+            <img src="assets/imgs/group.png" height="38"/>
+            <p>Nhóm 1:</p>
+            <span>SL: {{infomation.count_binary_left}}</span>
+            <h2>{{Formatnumber(infomation.total_pd_left)}}</h2>
+            <div class="border-line"></div>
+            <span class="row_2">Tích lũy</span>
+            <span class="row_21">{{Formatnumber(infomation.total_pd_lefts)}}</span>
+          </ion-col>
+          <ion-col text-center>
+          <img src="assets/imgs/group.png" height="38"/>
+            <p>Nhóm 2:</p>
+            <span>SL: {{infomation.count_binary_right}}</span>
+            <h2>{{Formatnumber(infomation.total_pd_right)}}</h2>
+            <div class="border-line"></div>
+            <span class="row_2">Tích lũy</span>
+            <span class="row_21">{{Formatnumber(infomation.total_pd_rights)}}</span>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col text-center>
+            <span text-center class="btn-submit" (click)="CalculationSystem()">Tính hoa hồng nhóm</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  
+
+  <ion-card class="card-tow">
+    <ion-card-content>
+      <ion-grid class="panel-one">
+        <ion-row>
+          <ion-col col-4  text-center>
+            <ion-icon name="contact"></ion-icon>
+            
+          </ion-col>
+          <ion-col col-8>
+            <p>Tên: <span>{{infomation.fullname}}</span></p>
+            <p>@: <b>{{infomation.email}}</b></p>
+            <p>DH: <b>{{infomation.danhhieu}}</b></p>
+            <p>DS Tạm: <b>{{Formatnumber(infomation.dstam)}}</b> RL</p>
+            <p>DSCN: <b>{{Formatnumber(infomation.total_node)}}</b> RL</p>
+            <p>Số F1 chính: <b>{{infomation.count_f1}}</b></p>
+            <p>% Hoa hồng nhóm: <b>{{infomation.percent_nhom}}</b> %</p>
+            <p>Max HH nhóm: <b>{{Formatnumber(infomation.max_out_nhom)}}</b> RL</p>
+            <p>HH nhóm / tháng: <b>{{Formatnumber(infomation.amount_hoahongcannhanh)}}</b> RL</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="card-three">
+    <ion-row>
+      <ion-col class="line_one">
+        <ion-icon name="folder"></ion-icon>
+        <h3>Ví thu nhập</h3>
+      </ion-col>
+    </ion-row>
+    <ion-card-content>
+      <ion-grid class="panel-three">
+        <ion-row>
+          <ion-col>
+            <h1 text-center><span><b>{{Formatnumber(infomation.balance_wallet)}}</b></span> RL</h1>
+            <h4 text-center>{{Formatnumber(infomation.balance_wallet * infomation.price_rl)}} <sup>đ</sup></h4>
+            <p>Hoa hồng trực hệ: <b>{{Formatnumber(infomation.th_wallet)}}</b> RL</p>
+            <p>Thưởng danh hiệu: <b>{{Formatnumber(infomation.dh_wallet)}}</b> RL</p>
+            <p>Hoa hồng nhóm: <b>{{Formatnumber(infomation.n_wallet)}}</b> RL</p>
+            <p>Hoa hồng cộng hưởng: <b>{{Formatnumber(infomation.ch_wallet)}}</b> RL</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col text-center>
+            <p style="margin: 0 auto;">
+            <span class="btn-ycr" (click)="ViewWithdraw()">Yêu cầu rút</span>
+            <span class="btn-xls" (click)="ViewHistory()">Xem lịch sử</span>
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+<ion-icon class="icon_add" (click)="ViewPageSystem()" name="add"></ion-icon>

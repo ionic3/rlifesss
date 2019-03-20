@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title float-left>Hồ sơ</ion-title>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="page-dashboard">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+      <ion-row class="panel-one">
+        <ion-col text-center>
+          <img src="assets/imgs/RICHLIFE_icon180.png" height="120"/>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row class="panel-tow">
+        <ion-col text-center>
+          <p><ion-icon name="mail"></ion-icon>. {{infomation.email}}</p>
+          <p class="id"><span>ID</span>. {{infomation.id}}</p>
+          <span (click)="ShowUpdatePassWord()" *ngIf="status_change_pass == false" class="btn-dmk">Đổi mật khẩu</span>
+          <p></p>
+          <div *ngIf="status_change_pass == true">
+            <form  (ngSubmit)="SubmitForm()">
+              <ion-input class="input_login" placeholder="Nhập mật khẩu mới"  name="password" type="password" required [(ngModel)]="form.password"></ion-input>
+              <p></p>
+              <button ion-button class="btn-dmk" type="submit" >Xác nhận đổi</button>
+              
+              <p></p>
+              <p style="margin: 0 auto; float: left;width: 100%; margin-top: 10px; margin-bottom: 20px;"><span (click)="HideUpdatePassWord()" class="btn-cancel">Hủy</span></p>
+            
+              <p></p>
+            </form>
+          </div>
+        </ion-col>
+      </ion-row>
+
+     
+      <ion-row class="card-tow" *ngIf="status_update_infomation == false">
+        
+          <ion-col col-4 text-center>
+            <ion-icon class="contactsss" name="contact"></ion-icon>
+            
+          </ion-col>
+          <ion-col col-8>
+            <p><ion-icon name="contact"></ion-icon><span>{{infomation.fullname}}</span></p>
+            <p><ion-icon name="call"></ion-icon><span>{{infomation.telephone}}</span></p>
+            <p><ion-icon name="calendar"></ion-icon><span>{{infomation.birthday}}</span></p>
+            
+          </ion-col>
+        <p style="margin: 20px auto" text-center><span class="btn-update" (click)="ShowUpdateInfomation()">Update</span></p>
+        <p></p>
+      </ion-row>
+      <ion-row class="card-tow" *ngIf="status_update_infomation == true">
+        <form style="width: 100%;"  (ngSubmit)="SubmitFormInfomation()">
+          <ion-col col-12>
+          
+            <ion-input class="input_update" placeholder="Tên đầy đủ của bạn"   type="text" required [(ngModel)]="form.fullname" name="fullname"></ion-input>
+            <ion-input class="input_update" placeholder="Số điện thoại"  type="number" required [(ngModel)]="form.telephone" name="telephone"></ion-input>
+            
+            <ion-datetime class="input_update" displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" [(ngModel)]="form.birthday" name="birthday"></ion-datetime>
+          </ion-col>
+          <ion-col col-12>
+            <p style="margin: 20px auto" text-center>
+              <button class="btn-done" type="submit" >Done</button>
+              <span class="btn-cancel" (click)="HideUpdateInfomation()">Hủy</span>
+            </p>
+          </ion-col>
+          </form>
+        
+      </ion-row>
+          
+
+</ion-content>
+<ion-icon class="icon_add" name="add"></ion-icon>

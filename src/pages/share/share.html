@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    
+    <ion-title float-left>Chia sẽ RICHLIFE App</ion-title>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="page-dashboard">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+     
+    
+      <ion-row class="title-header">
+       <ion-col text-center>
+        <img src="assets/imgs/generate.png"/>
+       </ion-col>   
+      </ion-row>
+      <ion-row >
+       <ion-col text-center>
+          <p>Hãy chia sẽ ứng dụng RICHLIFE cho những bạn bè của bạn!</p>
+       </ion-col>
+      </ion-row>
+      <ion-row >
+       <ion-col text-center>
+          <span class="btn-dmk">Chia sẺ App</span>
+       </ion-col>
+      </ion-row>
+</ion-content>
+<ion-icon class="icon_add" name="add"></ion-icon>

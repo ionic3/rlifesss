@@ -1,0 +1,144 @@
+
+<ion-header>
+
+  <ion-navbar>
+
+	<ion-title float-left text-center>Withdraw</ion-title>
+    
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+	<ion-refresher (ionRefresh)="doRefresh($event)">
+    	<ion-refresher-content></ion-refresher-content>
+  	</ion-refresher>
+	
+	<div class="clear_div"></div>
+	<ion-card class="crad-exchange">
+
+		<ion-card-header>
+	        <ion-card-title>Rút RL</ion-card-title>
+	    </ion-card-header>
+	    <ion-card-content>
+		    <form (ngSubmit)="SubmitForm()">
+			    
+				<ion-row class="">
+					<ion-col  col-5>
+						<ion-item class="border-bottom">
+						    <ion-label stacked>Số RL</ion-label>
+						    <ion-input [(ngModel)]="form.amount" name="amount" type="number" text-right placeholder="0,0000" (keyup)='onChangeInput($event.target.value)'></ion-input>
+					  	</ion-item>
+					</ion-col>
+					<ion-col col-2>
+						<img style="width: 30px;margin: 0 auto; margin-top: 16px;" src="assets/imgs/exchange.png">
+					</ion-col>
+					<ion-col  col-5>
+					  	<ion-item class="border-bottom input-readonly">
+						    <ion-label stacked style="color:#cecdcd !important">Số VNĐ</ion-label>
+						    <ion-input class="amount_estimate" [(ngModel)]="form.amount_estimate" name="amount_estimate" type="text" text-right placeholder="0,0000" readonly="true"></ion-input>
+
+					  	</ion-item>
+					</ion-col>
+				</ion-row>
+				<ion-row class="">
+					<ion-col>
+					<p class="text-amount" (click)="WithdrawAll()">Bạn có thể rút được tối đa: <b>{{Formatnumber(infomation.balance_wallet)}}</b> RL</p>
+					</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col>
+					  	<ion-item class="border-bottom">
+						    <ion-label stacked>Ngân hàng</ion-label>
+						    <ion-input [(ngModel)]="form.account_bank" text-left name="account_bank" type="text" placeholder=""></ion-input>
+					  	</ion-item>
+					  	
+					</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col>
+					  	<ion-item class="border-bottom">
+						    <ion-label stacked>Chi nhánh ngân hàng</ion-label>
+						    <ion-input [(ngModel)]="form.brandname" text-left name="brandname" type="text" placeholder=""></ion-input>
+					  	</ion-item>
+					  	
+					</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col>
+					  	<ion-item class="border-bottom">
+						    <ion-label stacked>Tên tài khoản</ion-label>
+						    <ion-input [(ngModel)]="form.account_horder" text-left name="account_horder" type="text" placeholder=""></ion-input>
+					  	</ion-item>
+					  	
+					</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col>
+					  	<ion-item class="border-bottom">
+						    <ion-label stacked>Số tài khoản</ion-label>
+						    <ion-input [(ngModel)]="form.account_number" text-left name="account_number" type="text" placeholder=""></ion-input>
+					  	</ion-item>
+					  	
+					</ion-col>
+				</ion-row>
+
+				<ion-row *ngIf="infomation.status_password_transaction == true">
+					<ion-col>
+					  	<ion-item class="border-bottom">
+						    <ion-label stacked>Mật khẩu cấp 2</ion-label>
+						    <ion-input [(ngModel)]="form.password_transaction" text-left name="account_number" type="password" placeholder=""></ion-input>
+					  	</ion-item>
+					  	
+					</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col >
+						
+						<button ion-button full>Rút ngay</button>
+						
+					</ion-col>
+				</ion-row>
+			</form>
+		</ion-card-content>
+	</ion-card>
+	
+
+
+
+	<ion-card style="margin-top: 20px; border-radius: 10px;">
+		<ion-card-header>
+	        <ion-card-title text-center>Lịch sử rút RL</ion-card-title>
+	    </ion-card-header>
+
+	    <ion-card-content class="history">
+	    	<p style="color: #FF5722; font-size: 16px; padding: 0; background: #FFF; text-align: center !important; width: 100%; margin: 0px; margin-top: 5px;" text-center>Tổng số: <b>{{count_history}}</b></p>
+		    <ion-grid *ngFor="let item of history" style="border-bottom: 1px solid #eee;" >
+		      	<ion-row >
+		          	<ion-col col-5>
+		          		<span float-left><span class="iconstatus " [ngClass]="{'finish_withdraw': item.status === 1}"></span> Lệnh rút</span>
+		          	</ion-col>
+		          	<ion-col col-7>
+		          			<span float-right class="amount">-{{item.amount}}  RL </span>
+		          		
+		          	</ion-col>
+		        </ion-row>
+		        <ion-row>
+		          	<ion-col col-7>
+		          		<span float-left class="date_added">{{item.date_added}}</span>
+		          	</ion-col>
+		          	<ion-col col-5>
+	          			<span class="status" float-right *ngIf="item.status == 0">Đang xử lý</span>
+	          			<span class="status" float-right *ngIf="item.status == 1">Đã chuyển</span>
+		          	</ion-col>
+		        </ion-row>
+		        
+			</ion-grid>
+			<!-- <p text-center  *ngIf="count_history == 0">No data</p>
+			<ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="count_history > 0">
+				   <ion-infinite-scroll-content></ion-infinite-scroll-content>
+				 </ion-infinite-scroll> -->
+	    </ion-card-content>
+
+	</ion-card>
+</ion-content>

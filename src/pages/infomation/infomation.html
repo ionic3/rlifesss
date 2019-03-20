@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    
+    <ion-title float-left>RICHLIFE</ion-title>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="page-dashboard">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+     
+    
+      <ion-row class="title-header">
+       <ion-col text-center>
+        <img src="assets/imgs/RICHLIFE_logo350.png"/>
+       </ion-col>   
+      </ion-row>
+      <ion-row >
+       <ion-col text-center>
+          <p class="border_price">1RL = <b>1.000</b> VNĐ</p>
+       </ion-col>
+      </ion-row>
+      <ion-row >
+       <ion-col text-center>
+          <h4>RICHLIFE APP</h4>
+          <p>Phiên bản: <b>1.4</b></p>
+       </ion-col>
+      </ion-row>
+</ion-content>
+<ion-icon class="icon_add" name="add"></ion-icon>

@@ -1,0 +1,20 @@
+page-share {
+	.content-md, .content-ios{
+		background-color: #fff;
+	}
+	img{
+		width: 200px;
+		margin: 20px auto;
+	}
+	p{
+		color: red;
+	}
+	.btn-dmk,.panel-tow .btn-cancel{
+	    padding: 10px;
+	    background: #FF5722;
+	    color: #fff;
+	    text-transform: uppercase;
+	    font-size: 25px;
+	    font-weight: bold;
+	}
+}

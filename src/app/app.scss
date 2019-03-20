@@ -1,0 +1,246 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.profile_menu p{
+    color: #fff;
+    z-index: 99999;
+    position: relative;
+    text-align: left;
+}
+.profile_menu img{
+	width: 80px;
+  z-index: 99999;
+  height: 80px;
+  position: relative;
+  margin-left: 23px;
+  margin-top: 40px;
+}
+.profile_menu p,.profile_menu h3{
+  color: #fff;
+  margin: 0px;
+  padding-left: 20px;
+}
+.profile_menu h3{
+  font-size: 18px;
+}
+ion-menu ion-toolbar{
+  height: 190px;
+}
+.toolbar-background{
+  background: #ffa83c;
+}
+.toolbar-title{
+  color: #423e3e;
+}
+.icon-back{
+    background: none;
+    font-size: 18px;
+    width: 35px;
+    color: #fff;
+}
+
+ button.item-ios:not([detail-none]) .item-inner{
+  background: none;
+ }
+
+ .label-ios {
+   
+    font-size: 16px;
+}
+.back-button-icon-ios {
+    margin: -1px 0 0;
+    display: inherit;
+    min-width: 18px;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 0 10px;
+}
+.back-button-icon-md {
+    margin: 0;
+    padding: 0 0px;
+    text-align: left;
+    text-align: start;
+    font-size: 22px;
+    font-weight: normal;
+    
+}
+.toolbar-title-md {
+    
+  font-size: 18px;
+    
+}
+.back-button-md{
+  min-width: 0px;
+}
+.card-ios {
+    margin: 5px;
+    width: calc(100% - 10px);
+  }
+.card-header-ios{
+  padding: 5px;
+}
+.item-md{
+  color: #191818;
+}
+.toolbar-title-md {
+    font-size: 17px;
+}
+.alert-md .alert-button-group{
+  padding: 0px;
+}
+.alert-md .alert-button{
+      padding: 12px 0;
+}
+.alert-md .alert-button:last-child .button-inner{
+  font-weight: bold;
+}
+.searchbar-md .searchbar-input {
+    padding: 6px 55px;
+    border-radius: 2px;
+    background-position: left 8px center;
+    height: auto;
+    font-size: 1.6rem;
+    font-weight: 400;
+     line-height: 22px; 
+    color: #141414;
+    background-color: #fff;
+    /* -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); */
+    /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); */
+    border: 4px solid #cdcdcd;
+    box-shadow: none;
+}
+.toggle-ios-secondary.toggle-checked .toggle-icon,.toggle-md-secondary.toggle-checked .toggle-inner{
+    background-color: #00a2ee;
+}
+.toggle-md-secondary.toggle-checked .toggle-icon{
+  background: rgba(0, 162, 238, 0.6);
+}
+.ion-md-menu:before,.ion-ios-menu:before{
+  color: #fff;
+}
+.content-md,.content-ios{
+  background-color: #d6d6d6;
+
+}
+
+.menu-inner .toolbar-background{
+  background: url('../assets/imgs/TopBGMenu.jpg');
+      background-position-y: -30px;
+}
+.list-md .item-block .item-inner,.list-ios .item-block .item-inner{
+  border: none !important;
+}
+ion-menu .item-md,ion-menu .item-ios {
+    color: #3F51B5;
+    border-bottom: 1px solid #c3c3c3;
+    font-size: 16px;
+    padding: 8px;
+}
+ion-menu ion-icon{
+  margin-left: 10px !important;
+}
+
+.alert-wrapper .alert-head{
+  padding: 25px 15px 20px 15px!important;
+  background: rgba(255, 152, 0, 0.941);
+    
+  color: #fff;
+}
+.alert-wrapper .alert-head .alert-title{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+input, textarea {
+    -webkit-user-select: auto !important;
+    -khtml-user-select: auto !important;
+    -moz-user-select: auto !important;
+    -ms-user-select: auto !important;
+    -o-user-select: auto !important;
+    user-select: auto !important;
+}
+.back-button-icon-md,.back-button-icon-ios {
+    font-size: 21px !important;
+}
+.back-button-icon {
+    background: none;
+    width: 16px;
+}
+.back-button.show-back-button{
+  color: #fff;
+}
+.alert-message {
+    margin-top: 15px !important;
+  overflow: hidden !important;
+    border-bottom: 1px solid #eee;
+    color: #000;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 490;
+}
+.select-alert .alert-message {
+    margin-top: 0px !important;
+}
+.alert_success .toast-wrapper{
+  background: #4CAF50;
+}
+
+.card-title-ios {
+    color: #3c3b3b;
+    margin: 2px 0;
+    font-weight: 400;
+}
+.alert-md .alert-wrapper{
+  border-radius: 10px;
+}
+.alert-wrapper .alert-head {
+    border-radius: 10px 10px 0 0;
+}
+.alert-ios .alert-message:empty{
+  padding: 0px;
+}
+.alert-md .alert-button{
+  margin: 0px;
+  width: 50%;
+  text-align: center;
+  text-transform: capitalize;
+    font-weight: 400;
+    font-size: 16px;
+}
+.alert-md .alert-button .button-inner{
+  text-align: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.alert-wrapper .alert-head .alert-title{
+  text-align: center;
+}
+.alert-md .alert-button:first-child{
+  border-right: 1px solid #e0e0e0;
+}
+.loading-md .loading-wrapper{
+  border-radius: 10px;
+}
+.loading-md .loading-spinner + .loading-content {
+    margin-left: 16px;
+    font-weight: bold;
+    color: #292929;
+}
+.back-button-icon-md{
+  font-size: 21px;
+}

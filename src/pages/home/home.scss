@@ -1,0 +1,266 @@
+page-home {
+	
+	.customer-padding-0{
+		padding: 0px;
+	}
+	.page-dashboard .wallet-item{
+		padding: 15px;
+		border-radius: 5px;
+		border: 1px solid #eee;
+		margin-bottom: 7px;
+		box-shadow: 0 1px 1px -1px rgba(0,0,0,.1), 0 1px 1px 0 rgba(0,0,0,.11), 0 1px 1px 0 rgba(0,0,0,.11);
+	}
+	.page-dashboard .wallet-item h4{
+		margin: 0px;
+	}
+	.page-dashboard .wallet-item p{
+		font-weight: 500;
+		font-size: 20px;
+		margin: 0px;
+		color: #424242;
+
+	}
+	.notifications{
+		font-size: 22px;
+		margin-right: 14px;
+	}
+	.card-title-md,.card-title-ios{
+		
+		padding: 0px;
+	    font-size: 15px;
+	    font-weight: bold;
+	    color: #6d522a;
+	}
+	
+	.header .bar-buttons,.header .toolbar-title,.header .notifications{
+		color: #2f2f2f;
+	}
+
+	.border{
+		border:1px solid #eee;
+	}
+	.text_description{
+		padding: 10px 20px;
+	    line-height: 22px;
+	    color: #4c4c4c;
+	    position: relative;
+	    z-index: 99999;
+	}
+	.mywallet{
+		margin-top: -20px;
+		width: 100%;
+		float: left;
+		position: relative;
+		z-index: 9999;
+	}
+	.qr-scanner-img{
+		margin-top: -54px;
+	    position: relative;
+	    z-index: 1;
+    	display: block;
+	    width: 64%;
+	    margin: 0 auto;
+	}
+	.pending{
+		text-transform: capitalize;
+		
+		font-weight: bold;
+		opacity: 0.6;
+	}
+	.border-tab{
+		border:1px solid #b7b7b7;
+		border-top: none;
+	}
+	.border-tab.active{
+		background: #4caf50;
+	}
+	.border-tab.active h3{
+		color: #fff;
+	}
+	.card-header-md{
+	    padding: 10px;
+		text-align: center;
+	}
+	.label-md{
+		margin: 0px;
+	}
+	.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+	    box-shadow: none;
+	  }
+	  .item-md.item-input.item-input-has-focus .item-inner, .item-md.item-input.input-has-focus .item-inner{
+	    box-shadow: none;
+	  }
+	.item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+	    color: #282828;
+	}
+	.button-default  {
+	    padding: 19px !important;
+	    background: #4CAF50 !important;
+	    margin-top: 22px;
+	}
+	.text-error{
+		color: red;
+		margin-top: 10px;
+	}
+	.card-header{
+		padding-left: 5px;
+	}
+	.card-content{
+		padding: 0px;
+	}
+	.label-ios { 
+	    font-size: 12px;
+	}
+	.notifications_div{
+		position: relative;
+	    width: 30px;
+    	float: right;
+	}
+	.notifications_div span{
+		position: absolute;
+	    top: 0px;
+	    font-size: 10px;
+	    background: red;
+	    border-radius: 50%;
+	    width: 15px;
+	    height: 15px;
+	    text-align: center;
+	    border: none;
+	    line-height: 14px;
+	    font-weight: bold;
+	    border: 1px solid #fff;
+	    right: 6px;
+	    color: #fff;
+	}
+	.card-md, .card-ios{
+		border-radius: 25px;
+	}
+	.border-line{
+		border-top: 1px solid #9a9a9a;
+	    width: 90%;
+	    margin: 0 auto;
+	}
+	.title-header{
+		margin-bottom: 5px;
+	}
+	.title-header ion-icon{
+		font-size: 30px;
+		float: left;
+		margin-right: 7px;
+	}
+	.title-header span{
+		float: left;
+		margin-top: 7px;
+		font-weight: bold;
+		color: #65471a;
+
+	}
+	ion-card img{
+		width: auto;
+		margin: 0 auto
+	}
+	.panel-one p{
+		font-weight: bold;
+		margin-bottom: 7px;
+	}
+	
+	.panel-one h2{
+		margin-top: 7px;
+		font-size: 20px;;
+	}
+	.panel-one .row_2{
+		margin-top: 10px;
+	    float: left;
+	    width: 100%;
+	}
+	.panel-one .row_21{
+	    color: #4c4949;
+	    width: 100%;
+	    float: left;
+	    font-size: 16px;
+	    margin-bottom: 10px;
+	}
+	.btn-submit{
+		padding: 8px;
+		color: #fff;
+		background: #46a54a;
+	}
+	ion-card {
+	    padding: 10px 0;
+	}
+	.card-tow p{
+		font-weight: 400;
+	}
+	.card-tow p span{
+		text-transform: uppercase;
+		color: #64471b;
+		font-weight: bold;
+	}
+	.card-tow ion-icon{
+	    color: #fff;
+	    background: #8BC34A;
+	    padding: 24px;
+	    font-size: 50px;
+	    width: 95px;
+	    height: 95px;
+	    margin: 0 auto;
+	    text-align: center;
+	    border-radius: 50%;
+	    margin-top: 70px;
+	}
+	.card-three .line_one{
+		height: 50px;
+		line-height: 50px;
+		background: #4c352d;
+		color: #fff;
+	}
+	.card-three{
+		background: #fdc620;
+	}
+	.card-three ion-icon{
+		font-size: 40px;
+		float: left;
+	}
+	.card-three h3{
+		color: #fff;
+	    line-height: 40px;
+	    font-size: 17px;
+	    font-weight: bold;
+	    margin-left: 15px;
+	    float: left;
+	}
+	.card-three p{
+		font-size: 15px;
+		padding-left: 20px;
+	}
+	.card-three h4{
+		font-size: 20px;
+	}
+	.card-three .btn-ycr,.card-three .btn-xls{
+	    padding: 10px;
+	    background: #4c352e;
+	    color: #fff;
+	    margin-top: 10px;
+	    margin: 0 auto;
+	    font-weight: bold;
+	}
+	.card-three .btn-xls{
+		font-weight: 500;
+		background: #a07466;
+	}
+	.icon_add{
+		font-size: 20px;
+	    background: #FF5722;
+	    color: #fff;
+	    border-radius: 50%;
+	    width: 50px;
+	    height: 50px;
+	    float: left;
+	    line-height: 50px;
+	    text-align: center;
+	    position: absolute;
+	    right: 30px;
+	    bottom: 15px;
+	    z-index: 9999;
+	}
+}

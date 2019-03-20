@@ -1,0 +1,54 @@
+<ion-header>
+   <ion-navbar>
+      <ion-title float-left text-center>Thêm thành viên mới</ion-title>
+   </ion-navbar>
+</ion-header>
+<ion-content class="register-page">
+   <div class="logo">
+      <img src="assets/imgs/RICHLIFE_logo350.png" height="180"/>
+   </div>
+   <p class="text-cap" text-center>Để tài khoản được bảo vệ.</p>
+   <p class="text-cap" text-center>Địa chỉ email phải đang hoạt động.</p>
+   <form  (ngSubmit)="SubmitForm()">
+      <ion-list no-lines>
+         <ion-item>
+            <ion-input class="input_login" placeholder="Nhập email" [(ngModel)]="form.email"  name="email" type="text" required>
+            </ion-input>
+            <ion-icon name="mail" item-right></ion-icon>
+         </ion-item>
+
+         <ion-item>
+            <ion-input class="input_login" placeholder="Nhập số điện thoại" [(ngModel)]="form.telephone"  name="telephone" type="number" required>
+            </ion-input>
+            <ion-icon name="call" item-right></ion-icon>
+         </ion-item>
+
+         <ion-item>
+            <ion-input class="input_login" placeholder="Họ tên đầy đủ" [(ngModel)]="form.fullname"  name="fullname" type="text" required>
+            </ion-input>
+            <ion-icon name="contact" item-right></ion-icon>
+         </ion-item>
+
+         <ion-item>
+            <ion-input class="input_login" placeholder="Đặt mật khẩu" [(ngModel)]="form.password"  name="password" type="password" required>
+            </ion-input>
+            <ion-icon name="lock" item-right></ion-icon>
+         </ion-item>
+
+         <ion-item>
+            <ion-input class="input_login" placeholder="Nhập lại mật khẩu" [(ngModel)]="form.re_password"  name="re_password" type="password" required>
+            </ion-input>
+            <ion-icon name="lock" item-right></ion-icon>
+         </ion-item>
+
+      </ion-list>
+      
+      <ion-row responsive-sm margin-top class="customer_width">
+         <ion-col>
+            <button ion-button full type="submit" block>THÊM THÀNH VIÊN</button>
+         </ion-col>
+      </ion-row>
+      
+   </form>
+
+</ion-content>

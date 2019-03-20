@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title float-left>RICHLIFE</ion-title>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="page-dashboard">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+     
+    
+  <ion-card class="card-tow">
+    <ion-card-content>
+      <ion-grid class="panel-one">
+        <ion-row>
+          <ion-col col-4 text-center>
+            <ion-icon name="contact"></ion-icon>
+            
+          </ion-col>
+          <ion-col col-8>
+            <p>Tên: <span>{{infomation.fullname}}</span></p>
+            <p>@: <b>{{infomation.email}}</b></p>
+            <p>DH: <b>{{infomation.danhhieu}}</b></p>
+            <p>DS Tạm: <b>{{Formatnumber(infomation.dstam)}}</b> RL</p>
+            <p>DSCN: <b>{{Formatnumber(infomation.total_node)}}</b> RL</p>
+            <p>Số F1 chính: <b>{{infomation.count_f1}}</b></p>
+            <p>% Hoa hồng nhóm: <b>{{infomation.percent_nhom}}</b> %</p>
+            <p>Max HH nhóm: <b>{{Formatnumber(infomation.max_out_nhom)}}</b> RL</p>
+            <p>HH nhóm / tháng: <b>{{Formatnumber(infomation.amount_hoahongcannhanh)}}</b> RL</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <div >
+    <ion-segment [(ngModel)]="historys">
+      <ion-segment-button value="dstam">
+        DS tạm
+      </ion-segment-button>
+      <ion-segment-button value="dschinh">
+        DS chính
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="historys">
+    <ion-list *ngSwitchCase="'dstam'">
+      <ion-item>
+        <p text-center>Số giao dịch</p>
+        <p text-center>
+          <img src="assets/imgs/NoHistory.png">
+        </p>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'dschinh'">
+      <ion-item>
+        <p text-center>Số giao dịch</p>
+        <p text-center>
+          <img src="assets/imgs/NoHistory.png">
+        </p>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
