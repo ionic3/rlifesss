@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams,ToastController ,AlertController,Refresher} from 'ionic-angular';
-import { LoginPage } from '../login/login';
+import { NavController, NavParams,ToastController ,AlertController} from 'ionic-angular';
 
 import { Storage } from '@ionic/storage';
 import { LoadingController } from 'ionic-angular';
 
-import { HeaderColor } from '@ionic-native/header-color';
+import { SocialSharing } from '@ionic-native/social-sharing';
 @Component({
   selector: 'page-share',
   templateUrl: 'share.html'
@@ -23,7 +22,8 @@ export class SharePage {
 	public loadingCtrl: LoadingController,
 	public toastCtrl: ToastController,
 	public alertCtrl: AlertController,
-	private headerColor: HeaderColor
+	private socialSharing: SocialSharing
+	
   	) {
 
   }
@@ -33,13 +33,22 @@ export class SharePage {
 
 	}
 
-	
-	
-	doRefresh(refresher: Refresher) {
-		
+	ShareApp(){
+		 this.socialSharing.shareWithOptions( {
+         message: "Tải Richlife",
+         subject: "Tải Richlife",
+         url: "https://www.facebook.com",
+	     }).then((data) =>
+	     {
+	       console.log('Shared via SharePicker' + data);
+	     })
+	     .catch((err) =>
+	     {
+	       console.log('Was not shared via SharePicker' + err);
 
-			  	
-		refresher.complete();
-    	
-  	}
+	     })
+	     ;
+	}
+	
+	
 }

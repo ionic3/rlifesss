@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams,ToastController ,AlertController,Refresher} from 'ionic-angular';
-import { LoginPage } from '../login/login';
+import { WithdrawPage } from '../withdraw/withdraw';
 
 import { Storage } from '@ionic/storage';
 import { LoadingController } from 'ionic-angular';
@@ -102,7 +102,7 @@ export class WalletPage {
 
 
 	ViewWithdraw(){
-		this.navCtrl.push(WalletPage);
+		this.navCtrl.push(WithdrawPage);
 	}
 
 	Formatnumber(nStr){

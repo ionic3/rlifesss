@@ -7,11 +7,7 @@
 </ion-header>
 
 <ion-content class="page-dashboard">
-    <ion-refresher (ionRefresh)="doRefresh($event)">
-      <ion-refresher-content></ion-refresher-content>
-    </ion-refresher>
-     
-    
+   
       <ion-row class="title-header">
        <ion-col text-center>
         <img src="assets/imgs/RICHLIFE_logo350.png"/>
@@ -19,7 +15,7 @@
       </ion-row>
       <ion-row >
        <ion-col text-center>
-          <p class="border_price">1RL = <b>1.000</b> VNĐ</p>
+          <p class="border_price">1RL = <b>{{Formatnumber(infomation.price_rl)}}</b> VNĐ</p>
        </ion-col>
       </ion-row>
       <ion-row >
@@ -29,4 +25,3 @@
        </ion-col>
       </ion-row>
 </ion-content>
-<ion-icon class="icon_add" name="add"></ion-icon>

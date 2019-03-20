@@ -3,7 +3,7 @@ import { Nav, Platform, AlertController ,ToastController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
+//import { HomePage } from '../pages/home/home';
 import { ProfilePage } from '../pages/profile/profile';
 import { WalletPage } from '../pages/wallet/wallet';
 import { PersonalSalesPage } from '../pages/personal-sales/personal-sales';
@@ -11,9 +11,9 @@ import { SecondaryPasswordPage } from '../pages/secondary-password/secondary-pas
 import { InfomationPage } from '../pages/infomation/infomation';
 import { SharePage } from '../pages/share/share';
 import { SystemPage } from '../pages/system/system';
-import { WithdrawPage } from '../pages/withdraw/withdraw';
+//import { WithdrawPage } from '../pages/withdraw/withdraw';
 import { LoginPage } from '../pages/login/login';
-import { RegisterPage } from '../pages/register/register';
+//import { RegisterPage } from '../pages/register/register';
 
 import { Network } from '@ionic-native/network';
 import { Storage } from '@ionic/storage';
@@ -26,7 +26,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 export class MyApp {    
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = LoginPage;
   infomation : any = {};
   customer_id : any = '';
   versionApp : any;
@@ -55,7 +55,7 @@ export class MyApp {
       { title: 'Ví thu nhập', component: WalletPage, icon : 'folder' },
       { title: 'Doanh số cá nhân', component: PersonalSalesPage, icon : 'basket' },
       { title: 'Đặt mật khẩu cấp 2', component: SecondaryPasswordPage, icon : 'settings' },
-      { title: 'Thông tin', component: PersonalSalesPage, icon : 'information-circle' },
+      { title: 'Thông tin', component: InfomationPage, icon : 'information-circle' },
       { title: 'Chia sẻ App', component: SharePage, icon : 'share' } 
     ];
 

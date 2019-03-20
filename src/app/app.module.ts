@@ -30,6 +30,7 @@ import { Camera } from '@ionic-native/camera';
 import { HeaderColor } from '@ionic-native/header-color';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { FileTransfer } from '@ionic-native/file-transfer'; 
+import { SocialSharing } from '@ionic-native/social-sharing';
 @NgModule({
   declarations: [
     MyApp,
@@ -78,7 +79,8 @@ import { FileTransfer } from '@ionic-native/file-transfer';
     Camera,
     HeaderColor,
     InAppBrowser,
-    FileTransfer
+    FileTransfer,
+    SocialSharing
     
   ]
 })

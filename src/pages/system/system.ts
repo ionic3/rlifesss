@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams,ToastController ,AlertController,Refresher} from 'ionic-angular';
-import { LoginPage } from '../login/login';
+
 import { RegisterPage } from '../register/register';
 
 import { Storage } from '@ionic/storage';

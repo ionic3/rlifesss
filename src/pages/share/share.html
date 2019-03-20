@@ -7,10 +7,7 @@
 </ion-header>
 
 <ion-content class="page-dashboard">
-    <ion-refresher (ionRefresh)="doRefresh($event)">
-      <ion-refresher-content></ion-refresher-content>
-    </ion-refresher>
-     
+    
     
       <ion-row class="title-header">
        <ion-col text-center>
@@ -24,8 +21,7 @@
       </ion-row>
       <ion-row >
        <ion-col text-center>
-          <span class="btn-dmk">Chia sẺ App</span>
+          <span class="btn-dmk" (click)="ShareApp()">Chia sẺ App</span>
        </ion-col>
       </ion-row>
 </ion-content>
-<ion-icon class="icon_add" name="add"></ion-icon>

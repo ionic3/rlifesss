@@ -112,13 +112,19 @@
       <ion-item *ngFor="let item of history_commision_thuong"  style="border-bottom: 1px solid #eee;" class="history" >
         <ion-row >
             <ion-col col-8 text-left>
-              <p class="detail">{{item.detail}}</p>
-              <p class="date_added">{{item.date_added}}</p>
+              
+              <p class="date_added" style="    margin-top: 10px;">{{item.date_added}}</p>
             </ion-col>
             <ion-col col-4 text-center>
-              <p class="amount"> + {{Formatnumber(item.amount)}} RL</p>
+              <p class="amount" style="    line-height: 30px;"> + {{Formatnumber(item.amount)}} RL</p>
             </ion-col>
         </ion-row>
+        <ion-row >
+            <ion-col col-12 text-left>
+              <p class="detail">{{item.detail}}</p>
+            </ion-col>
+        </ion-row>
+        
       </ion-item>
     </ion-list>
   </div>

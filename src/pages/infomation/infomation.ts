@@ -1,20 +1,17 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams,ToastController ,AlertController,Refresher} from 'ionic-angular';
-import { LoginPage } from '../login/login';
+import { NavController, NavParams,ToastController ,AlertController} from 'ionic-angular';
 
 import { Storage } from '@ionic/storage';
 import { LoadingController } from 'ionic-angular';
+import { ReffralServerProvider } from '../../providers/reffral-server/reffral-server';
 
-import { HeaderColor } from '@ionic-native/header-color';
 @Component({
   selector: 'page-infomation',
   templateUrl: 'infomation.html'
 })
 export class InfomationPage {
-	balance = {};
-	price_coin = {};
 	customer_id :any;
-	count_notifications = 0;
+	infomation = {};
   constructor(
   	public navCtrl: NavController, 
 	public navParams: NavParams,
@@ -22,23 +19,51 @@ export class InfomationPage {
 	public loadingCtrl: LoadingController,
 	public toastCtrl: ToastController,
 	public alertCtrl: AlertController,
-	private headerColor: HeaderColor
+	public ReffralServer: ReffralServerProvider,
+	
   	) {
 
   }
 
-  ionViewDidLoad() {
-  		
+  	ionViewDidLoad() {
+  		let loading = this.loadingCtrl.create({
+		    content: 'Đang tải dữ liệu... Vui lòng chờ!'
+	  	});
+  		loading.present();
+  		this.storage.get('customer_id')
+		.then((customer_id) => {
+			if (customer_id) 
+			{
+				this.customer_id = customer_id;
+				this.ReffralServer.GetInfomationUser(this.customer_id)
+		        .subscribe((data) => {
+		        	loading.dismiss();
+					if (data.status == 'complete')
+					{
+						this.infomation = data;
+						
+					}
+					
+		        })
+		  		
+		  	} 
+		})
 
 	}
 
 	
 	
-	doRefresh(refresher: Refresher) {
+	Formatnumber(nStr){
+		nStr += '';
+	    var x = nStr.split('.');
+	    var x1 = x[0];
+	    var x2 = x.length > 1 ? '.' + x[1] : '';
+	    var rgx = /(\d+)(\d{3})/;
+	    while (rgx.test(x1)) {
+	        x1 = x1.replace(rgx, '$1' + ',' + '$2');
+	    }
+	    return x1 + x2;
 		
-
-			  	
-		refresher.complete();
-    	
-  	}
+	}
+	
 }
