@@ -38,10 +38,11 @@ page-register {
     color: #fff;
   }
   .button-md,.button-ios{
-    background: #FF5722;
+    background: #34c7d0;
     height: 45px;
     font-size: 19px;
     font-weight: bold;
+    border-radius: 10px;
    }
    .button-md:hover:not(.disable-hover),.button-ios:hover:not(.disable-hover) {
       background-color: #FF5722;
@@ -57,7 +58,7 @@ page-register {
    
   .item-md,.item-ios{
     
-    border-bottom: 1px solid #FF5722 !important;
+    border-bottom: 1px solid #34c7d0 !important;
     margin-bottom: 20px;
     padding-left: 0px;
     

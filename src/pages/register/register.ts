@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ToastController,Platform ,AlertController } from 'ionic-angular';
 
-import { LoginPage } from '../login/login';
-import { SystemPage } from '../system/system';
+
 import { RegisterServerProvider } from '../../providers/register-server/register-server';
 import { LoadingController } from 'ionic-angular';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
@@ -38,11 +37,10 @@ export class RegisterPage {
 
 	}
 
-	goback() {
-		this.navCtrl.setRoot(LoginPage);
-	}
+	
 
 	ionViewDidLoad() {
+		
 		console.log('ionViewDidLoad RegisterPage');
 	}
 	
@@ -51,75 +49,126 @@ export class RegisterPage {
 	  return regex.test(email);
 	}
 	SubmitForm() {
-		
-		if (this.validateEmail(this.form['email']))
+		if (this.form['fullname'] == undefined || this.form['fullname'] == '')
 		{
-			if (this.form['telephone'] != undefined && this.form['telephone'] != '')
-			{
-				if (this.form['fullname'] != undefined && this.form['fullname'] != '')
+			this.AlertToast('Vui lòng nhập họ tên.');
+		}
+		else{
+			if (!this.validateEmail(this.form['email'])){
+				this.AlertToast('Vui lòng nhập email.');
+			}
+			else{
+				if (this.form['cmnd'] == undefined || this.form['cmnd'] == '')
 				{
-					if (this.form['password'] == this.form['re_password'] && this.form['password'] != undefined && this.form['password'] != '')
-					{
-						
-						let loading = this.loadingCtrl.create({
-						    content: 'Đang tạo tài khoản thành viên... Vul lòng chờ!'
-					  	});
-
-					  	loading.present();
-					  	
-					  	let p_node = this.navParams.get("customer_id");
-					  	let p_binary = this.navParams.get("p_binary");
-					  	let position = this.navParams.get("position");
-
-						this.RegisterServer.Signup(this.form['email'],this.form['telephone'],this.form['fullname'],this.form['password'],p_node,p_binary,position)
-				        .subscribe((data) => {
-							if (data.status == 'complete')
-							{
-								loading.dismiss();
-								let toast = this.toastCtrl.create({
-							      message: 'Thêm thành viên thành công',
-							      position: 'top',
-							      duration : 3000,
-							      cssClass : 'alert_success'
-							      
-							    });
-							    toast.present();	
-								this.navCtrl.setRoot(SystemPage);
-							}
-							else
-							{
-								loading.dismiss();
-								this.AlertToast(data.message);
-								
-							}
-				        },
-				        (err) => {
-				        	if (err)
-				        	{
-				        		loading.dismiss();
-				        		this.SeverNotLogin();
-				        	}
-				        })
-					}
-					else
-					{
-						this.AlertToast('Hai mật khẩu không trùng khớp.');
-					}
+					this.AlertToast('Vui lòng nhập số chứng minh thư.');
 				}
-				else
-				{
-					this.AlertToast('Bạn chưa nhập họ tên.');
+				else{
+					if (this.form['birthday'] == undefined || this.form['birthday'] == '')
+					{
+						this.AlertToast('Vui lòng nhập ngày tháng năm sinh.');
+					}
+					else{
+						if (this.form['telephone'] == undefined || this.form['telephone'] == '')
+						{
+							this.AlertToast('Vui lòng nhập số điện thoại.');
+						}
+						else{
+							if (this.form['address'] == undefined || this.form['address'] == '')
+							{
+								this.AlertToast('Vui lòng nhập địa chỉ nhà.');
+							}
+							else{
+								if (this.form['account_horder'] == undefined || this.form['account_horder'] == '')
+								{
+									this.AlertToast('Vui lòng nhập tên tài khoản ngân hàng.');
+								}
+								else{
+									if (this.form['account_number'] == undefined || this.form['account_number'] == '')
+									{
+										this.AlertToast('Vui lòng nhập số tài khoản ngân hàng.');
+									}
+									else{
+										if (this.form['bankname'] == undefined || this.form['bankname'] == '')
+										{
+											this.AlertToast('Vui lòng nhập tên ngân hàng.');
+										}
+										else{
+											if (this.form['brandname'] == undefined || this.form['brandname'] == '')
+											{
+												this.AlertToast('Vui lòng nhập chi nhánh ngân hàng.');
+											}
+											else{
+												if (this.form['password'] == undefined || this.form['password'] == '')
+												{
+													this.AlertToast('Vui lòng nhập mật khẩu.');
+												}
+												else{
+													let loading = this.loadingCtrl.create({
+													    content: 'Đang tạo tài khoản thành viên... Vul lòng chờ!'
+												  	});
+
+												  	loading.present();
+												  	
+												  	let p_node = this.navParams.get("customer_id");
+												  	let p_binary = this.navParams.get("p_binary");
+												  	let position = this.navParams.get("position");
+
+													this.RegisterServer.Signup(
+														this.form['fullname'],
+														this.form['email'],
+														this.form['cmnd'],
+														this.form['birthday'],
+														this.form['telephone'],
+														this.form['address'],
+														this.form['account_horder'],
+														this.form['account_number'],
+														this.form['bankname'],
+														this.form['brandname'],
+														this.form['password'],
+														p_node,
+														p_binary,
+														position
+													)
+											        .subscribe((data) => {
+														if (data.status == 'complete')
+														{
+															loading.dismiss();
+															let toast = this.toastCtrl.create({
+														      message: 'Thêm thành viên thành công',
+														      position: 'top',
+														      duration : 3000,
+														      cssClass : 'alert_success'
+														      
+														    });
+														    toast.present();	
+															this.navCtrl.pop();
+														}
+														else
+														{
+															loading.dismiss();
+															this.AlertToast(data.message);
+															
+														}
+											        },
+											        (err) => {
+											        	if (err)
+											        	{
+											        		loading.dismiss();
+											        		this.SeverNotLogin();
+											        	}
+											        })
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
 				}
 			}
-			else
-			{
-				this.AlertToast('Số điện thoại không hợp lệ.');
-			}		
 		}
-		else
-		{
-			this.AlertToast('Email không hợp lệ.');
-		}
+		
 	}
 
 

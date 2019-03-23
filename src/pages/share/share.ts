@@ -35,9 +35,9 @@ export class SharePage {
 
 	ShareApp(){
 		 this.socialSharing.shareWithOptions( {
-         message: "Tải Richlife",
-         subject: "Tải Richlife",
-         url: "https://www.facebook.com",
+         message: "Tải ACT-LIFE",
+         subject: "Tải ACT-LIFE",
+         url: "https://atc-life.com",
 	     }).then((data) =>
 	     {
 	       console.log('Shared via SharePicker' + data);

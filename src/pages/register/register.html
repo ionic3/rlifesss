@@ -12,9 +12,27 @@
    <form  (ngSubmit)="SubmitForm()">
       <ion-list no-lines>
          <ion-item>
+            <ion-input class="input_login" placeholder="Họ tên đầy đủ" [(ngModel)]="form.fullname"  name="fullname" type="text" required>
+            </ion-input>
+            <ion-icon name="contact" item-right></ion-icon>
+         </ion-item>
+
+         <ion-item>
             <ion-input class="input_login" placeholder="Nhập email" [(ngModel)]="form.email"  name="email" type="text" required>
             </ion-input>
             <ion-icon name="mail" item-right></ion-icon>
+         </ion-item>
+
+         <ion-item>
+            <ion-input class="input_login" placeholder="Nhập số chứng minh thư" [(ngModel)]="form.cmnd"  name="cmnd" type="text" required>
+            </ion-input>
+            <ion-icon name="person" item-right></ion-icon>
+         </ion-item>
+
+         <ion-item>
+            <ion-input class="input_login" placeholder="Nhập ngày tháng năm sinh" [(ngModel)]="form.birthday" onfocus="(this.type='date')" onblur="(this.type='text')"  name="birthday" type="text" required>
+            </ion-input>
+            <ion-icon name="calendar" item-right></ion-icon>
          </ion-item>
 
          <ion-item>
@@ -24,19 +42,37 @@
          </ion-item>
 
          <ion-item>
-            <ion-input class="input_login" placeholder="Họ tên đầy đủ" [(ngModel)]="form.fullname"  name="fullname" type="text" required>
+            <ion-input class="input_login" placeholder="Nhập địa chỉ" [(ngModel)]="form.address"  name="address" type="text" required>
+            </ion-input>
+            <ion-icon name="briefcase" item-right></ion-icon>
+         </ion-item>
+
+         <ion-item>
+            <ion-input class="input_login" placeholder="Nhập tên tài khoản ngân hàng" [(ngModel)]="form.account_horder"  name="account_horder" type="text" required>
+            </ion-input>
+            <ion-icon name="contact" item-right></ion-icon>
+         </ion-item>
+
+         <ion-item>
+            <ion-input class="input_login" placeholder="Nhập số tài khoản ngân hàng" [(ngModel)]="form.account_number"  name="account_number" type="text" required>
+            </ion-input>
+            <ion-icon name="contact" item-right></ion-icon>
+         </ion-item>
+
+         <ion-item>
+            <ion-input class="input_login" placeholder="Nhập tên ngân hàng" [(ngModel)]="form.bankname"  name="bankname" type="text" required>
+            </ion-input>
+            <ion-icon name="contact" item-right></ion-icon>
+         </ion-item>
+
+         <ion-item>
+            <ion-input class="input_login" placeholder="Nhập chi nhánh ngân hàng" [(ngModel)]="form.brandname"  name="brandname" type="text" required>
             </ion-input>
             <ion-icon name="contact" item-right></ion-icon>
          </ion-item>
 
          <ion-item>
             <ion-input class="input_login" placeholder="Đặt mật khẩu" [(ngModel)]="form.password"  name="password" type="password" required>
-            </ion-input>
-            <ion-icon name="lock" item-right></ion-icon>
-         </ion-item>
-
-         <ion-item>
-            <ion-input class="input_login" placeholder="Nhập lại mật khẩu" [(ngModel)]="form.re_password"  name="re_password" type="password" required>
             </ion-input>
             <ion-icon name="lock" item-right></ion-icon>
          </ion-item>

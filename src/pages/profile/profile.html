@@ -44,12 +44,12 @@
             
           </ion-col>
           <ion-col col-8>
+            <p><ion-icon name="mail"></ion-icon><span>{{infomation.email}}</span></p>
             <p><ion-icon name="contact"></ion-icon><span>{{infomation.fullname}}</span></p>
             <p><ion-icon name="call"></ion-icon><span>{{infomation.telephone}}</span></p>
-            <p><ion-icon name="calendar"></ion-icon><span>{{infomation.birthday}}</span></p>
             
           </ion-col>
-        <p style="margin: 20px auto" text-center><span class="btn-update" (click)="ShowUpdateInfomation()">Update</span></p>
+       <!--  <p style="margin: 20px auto" text-center><span class="btn-update" (click)="ShowUpdateInfomation()">Update</span></p> -->
         <p></p>
       </ion-row>
       <ion-row class="card-tow" *ngIf="status_update_infomation == true">

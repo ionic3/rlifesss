@@ -10,7 +10,7 @@ import { Network } from '@ionic-native/network';
 import { ProfilePage } from '../pages/profile/profile';
 import { WalletPage } from '../pages/wallet/wallet';
 import { PersonalSalesPage } from '../pages/personal-sales/personal-sales';
-import { SecondaryPasswordPage } from '../pages/secondary-password/secondary-password';
+//import { SecondaryPasswordPage } from '../pages/secondary-password/secondary-password';
 import { InfomationPage } from '../pages/infomation/infomation';
 import { SharePage } from '../pages/share/share';
 import { SystemPage } from '../pages/system/system';
@@ -40,7 +40,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
     ProfilePage,
     WalletPage,
     PersonalSalesPage,
-    SecondaryPasswordPage,
+    //SecondaryPasswordPage,
     InfomationPage,
     SharePage,
     WithdrawPage,
@@ -61,7 +61,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
     ProfilePage,
     WalletPage,
     PersonalSalesPage,
-    SecondaryPasswordPage,
+    //SecondaryPasswordPage,
     InfomationPage,
     SharePage,
     WithdrawPage,

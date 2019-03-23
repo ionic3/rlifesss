@@ -6,8 +6,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 //import { HomePage } from '../pages/home/home';
 import { ProfilePage } from '../pages/profile/profile';
 import { WalletPage } from '../pages/wallet/wallet';
-import { PersonalSalesPage } from '../pages/personal-sales/personal-sales';
-import { SecondaryPasswordPage } from '../pages/secondary-password/secondary-password';
+//import { PersonalSalesPage } from '../pages/personal-sales/personal-sales';
+//import { SecondaryPasswordPage } from '../pages/secondary-password/secondary-password';
 import { InfomationPage } from '../pages/infomation/infomation';
 import { SharePage } from '../pages/share/share';
 import { SystemPage } from '../pages/system/system';
@@ -53,8 +53,8 @@ export class MyApp {
       { title: 'Hồ sơ cá nhân', component: ProfilePage, icon : 'contact' },
       { title: 'Nhóm kinh doanh', component: SystemPage, icon : 'people' },
       { title: 'Ví thu nhập', component: WalletPage, icon : 'folder' },
-      { title: 'Doanh số cá nhân', component: PersonalSalesPage, icon : 'basket' },
-      { title: 'Đặt mật khẩu cấp 2', component: SecondaryPasswordPage, icon : 'settings' },
+      //{ title: 'Doanh số cá nhân', component: PersonalSalesPage, icon : 'basket' },
+      //{ title: 'Đặt mật khẩu cấp 2', component: SecondaryPasswordPage, icon : 'settings' },
       { title: 'Thông tin', component: InfomationPage, icon : 'information-circle' },
       { title: 'Chia sẻ App', component: SharePage, icon : 'share' } 
     ];
